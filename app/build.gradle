@@ -1,7 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
-// Õâ¸översionÊÇÇø·Ölibrary°æ±¾µÄ£¬Òò´Ëµ±ÎÒÃÇĞèÒª¸üĞÂlibraryÊ±¼ÇµÃĞŞ¸ÄÕâ¸översion
+// è¿™ä¸ªversionæ˜¯åŒºåˆ†libraryç‰ˆæœ¬çš„ï¼Œå› æ­¤å½“æˆ‘ä»¬éœ€è¦æ›´æ–°libraryæ—¶è®°å¾—ä¿®æ”¹è¿™ä¸ªversion
 version = "1.0.0"
 android {
     compileSdkVersion 22
@@ -43,9 +43,9 @@ dependencies {
     compile 'org.bouncycastle:bcprov-jdk15on:1.54'
     compile 'com.google.code.gson:gson:2.5'
 }
-def siteUrl = 'https://github.com/aieves/aieve'      // ÏîÄ¿µÄÖ÷Ò³
-def gitUrl = 'https://github.com/aieves/aieve.git'   // Git²Ö¿âµÄurl
-group = "ai.eve" // Maven Group ID for the artifact£¬Ò»°ãÌîÄãÎ¨Ò»µÄ°üÃû
+def siteUrl = 'https://github.com/aieves/aieve'      // é¡¹ç›®çš„ä¸»é¡µ
+def gitUrl = 'https://github.com/aieves/aieve.git'   // Gitä»“åº“çš„url
+group = "ai.eve" // Maven Group ID for the artifactï¼Œä¸€èˆ¬å¡«ä½ å”¯ä¸€çš„åŒ…å
 install {
     repositories.mavenInstaller {
         // This generates POM.xml with proper parameters
@@ -53,7 +53,7 @@ install {
             project {
                 packaging 'aar'
                 // Add your description here
-                name 'Android Commonly used utils'  //ÏîÄ¿ÃèÊö
+                name 'Android Commonly used utils'  //é¡¹ç›®æè¿°
                 url siteUrl
                 // Set your license
                 licenses {
@@ -102,8 +102,8 @@ bintray {
     key = properties.getProperty("bintray.apikey")
     configurations = ['archives']
     pkg {
-        repo = "maven"  //·¢²¼µ½BintrayµÄÄÇ¸ö²Ö¿âÀï£¬Ä¬ÈÏÕË»§ÓĞËÄ¸ö¿â£¬ÎÒÃÇÕâÀïÉÏ´«µ½maven¿â
-        name = "aieve"  //·¢²¼µ½BintrayÉÏµÄÏîÄ¿Ãû×Ö
+        repo = "maven"  //å‘å¸ƒåˆ°Bintrayçš„é‚£ä¸ªä»“åº“é‡Œï¼Œé»˜è®¤è´¦æˆ·æœ‰å››ä¸ªåº“ï¼Œæˆ‘ä»¬è¿™é‡Œä¸Šä¼ åˆ°mavenåº“
+        name = "aieve"  //å‘å¸ƒåˆ°Bintrayä¸Šçš„é¡¹ç›®åå­—
         websiteUrl = siteUrl
         vcsUrl = gitUrl
         licenses = ["Apache-2.0"]
