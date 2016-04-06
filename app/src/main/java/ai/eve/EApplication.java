@@ -11,12 +11,17 @@ import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 
 import org.apache.http.protocol.HTTP;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.net.HttpCookie;
 import java.util.HashMap;
 import java.util.Properties;
+import java.util.Set;
 
 import ai.eve.http.EFileDownloader;
 import ai.eve.http.EImageLoader;
@@ -30,7 +35,7 @@ import ai.eve.volley.stack.HurlStack;
 import ai.eve.volley.toolbox.BasicNetwork;
 
 /**
- *
+ * 
  * <p>
  * 使用此框架的工程需继承此类
  * </p>
@@ -43,7 +48,7 @@ import ai.eve.volley.toolbox.BasicNetwork;
  * <li>远程服务器的地址初始化</li>
  * <li>多异步任务的管理类初始化</li>
  * </ol>
- *
+ * 
  * <p>
  * 子类需覆盖的变量:
  * </p>
@@ -52,13 +57,13 @@ import ai.eve.volley.toolbox.BasicNetwork;
  * <li>localURL(本地数据存放地址(基于assert目录))</li>
  * <li>remoteURL(远程数据地址)</li>
  * </ul>
- *
+ * 
  * @author Eve-Wyong
  * @version 2015-2-23 下午11:03:06
  * @Copyright 2014 EVE. All rights reserved.
  */
 public class EApplication extends Application {
-    //11111
+
 	public static boolean OPEN_LOG = true;
 
 	/**
