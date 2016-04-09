@@ -30,7 +30,7 @@ import ai.eve.widget.EToolBar;
 /**
  * Created by Administrator on 2016/1/26.
  */
-public class EToolBarActicity extends ActionBarActivity {
+public class EToolBarActivity extends ActionBarActivity {
     private FrameLayout content;
     public EToolBar mToolBar;
 
