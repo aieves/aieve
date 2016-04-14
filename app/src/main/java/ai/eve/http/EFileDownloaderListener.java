@@ -4,7 +4,7 @@ import android.app.ProgressDialog;
 
 import ai.eve.EApplication;
 import ai.eve.activity.EActivity;
-import ai.eve.activity.EToolBarActicity;
+import ai.eve.activity.EToolBarActivity;
 import ai.eve.util.ELog;
 import ai.eve.volley.Listener;
 import ai.eve.volley.NetroidError;
@@ -16,8 +16,8 @@ public abstract class EFileDownloaderListener<T> extends Listener<T>{
 		super.onError(error);
 		if(EApplication.mContext instanceof EActivity){
 			((EActivity) EApplication.mContext).handleRequestError(error);
-		}else if(EApplication.mContext instanceof EToolBarActicity){
-			((EToolBarActicity) EApplication.mContext).handleRequestError(error);
+		}else if(EApplication.mContext instanceof EToolBarActivity){
+			((EToolBarActivity) EApplication.mContext).handleRequestError(error);
 		}
 		ELog.E(error.getMessage());
 	}

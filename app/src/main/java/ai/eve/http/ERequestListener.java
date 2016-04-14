@@ -4,7 +4,7 @@ import android.content.Context;
 
 import ai.eve.EApplication;
 import ai.eve.activity.EActivity;
-import ai.eve.activity.EToolBarActicity;
+import ai.eve.activity.EToolBarActivity;
 import ai.eve.util.ELog;
 import ai.eve.volley.Listener;
 import ai.eve.volley.NetroidError;
@@ -22,8 +22,8 @@ public abstract class ERequestListener<T> extends Listener<T>{
 		super.onError(error);
 		if(EApplication.mContext instanceof  EActivity){
 			((EActivity) EApplication.mContext).handleRequestError(error);
-		}else if(EApplication.mContext instanceof EToolBarActicity){
-			((EToolBarActicity) EApplication.mContext).handleRequestError(error);
+		}else if(EApplication.mContext instanceof EToolBarActivity){
+			((EToolBarActivity) EApplication.mContext).handleRequestError(error);
 		}
 		ELog.E(error.getMessage());
 	}
@@ -42,9 +42,9 @@ public abstract class ERequestListener<T> extends Listener<T>{
 				if(((EActivity) EApplication.mContext).getDialog()!=null){
 					((EActivity) EApplication.mContext).getDialog().show();
 				}
-			}else if(EApplication.mContext instanceof  EToolBarActicity){
-				if(((EToolBarActicity) EApplication.mContext).getDialog()!=null){
-					((EToolBarActicity) EApplication.mContext).getDialog().show();
+			}else if(EApplication.mContext instanceof EToolBarActivity){
+				if(((EToolBarActivity) EApplication.mContext).getDialog()!=null){
+					((EToolBarActivity) EApplication.mContext).getDialog().show();
 				}
 			}
 		}catch(Exception e){
@@ -61,9 +61,9 @@ public abstract class ERequestListener<T> extends Listener<T>{
 				if(((EActivity) EApplication.mContext).getDialog()!=null){
 					((EActivity) EApplication.mContext).getDialog().dismiss();
 				}
-			}else if(EApplication.mContext instanceof  EToolBarActicity){
-				if(((EToolBarActicity) EApplication.mContext).getDialog()!=null){
-					((EToolBarActicity) EApplication.mContext).getDialog().dismiss();
+			}else if(EApplication.mContext instanceof EToolBarActivity){
+				if(((EToolBarActivity) EApplication.mContext).getDialog()!=null){
+					((EToolBarActivity) EApplication.mContext).getDialog().dismiss();
 				}
 			}
 
