@@ -7,7 +7,7 @@ import java.util.Observable;
 import java.util.Observer;
 
 import ai.eve.activity.EActivity;
-import ai.eve.activity.EToolBarActicity;
+import ai.eve.activity.EToolBarActivity;
 import ai.eve.util.ELog;
 
 /**
@@ -51,9 +51,9 @@ public abstract class eGenericTask extends AsyncTask<eTaskParams, Object, eTaskR
            if(((EActivity)context).getDialog()!=null){
                ((EActivity)context).getDialog().dismiss();
            }
-       }else if(context instanceof EToolBarActicity){
-           if(((EToolBarActicity)context).getDialog()!=null){
-               ((EToolBarActicity)context).getDialog().dismiss();
+       }else if(context instanceof EToolBarActivity){
+           if(((EToolBarActivity)context).getDialog()!=null){
+               ((EToolBarActivity)context).getDialog().dismiss();
            }
        }
    }
@@ -67,9 +67,9 @@ public abstract class eGenericTask extends AsyncTask<eTaskParams, Object, eTaskR
            if(((EActivity)context).getDialog()!=null){
                ((EActivity)context).getDialog().show();
            }
-       }else if(context instanceof EToolBarActicity){
-           if(((EToolBarActicity)context).getDialog()!=null){
-               ((EToolBarActicity)context).getDialog().show();
+       }else if(context instanceof EToolBarActivity){
+           if(((EToolBarActivity)context).getDialog()!=null){
+               ((EToolBarActivity)context).getDialog().show();
            }
        }
    }
@@ -83,9 +83,9 @@ public abstract class eGenericTask extends AsyncTask<eTaskParams, Object, eTaskR
            if(((EActivity)context).getDialog()!=null){
                ((EActivity)context).getDialog().dismiss();
            }
-       }else if(context instanceof EToolBarActicity){
-           if(((EToolBarActicity)context).getDialog()!=null){
-               ((EToolBarActicity)context).getDialog().dismiss();
+       }else if(context instanceof EToolBarActivity){
+           if(((EToolBarActivity)context).getDialog()!=null){
+               ((EToolBarActivity)context).getDialog().dismiss();
            }
        }
    }
