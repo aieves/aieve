@@ -111,6 +111,7 @@ public class ERequest<T> {
 	 */
 	public void doPost(String url, final HashMap<String, String> params, final boolean encrypt,boolean cache) {
 		EStringRequest sr = new EStringRequest(Method.POST, url,(ERequestListener<String>) mListener) {
+
 			@Override
 			public Map<String, String> getParams() throws AuthFailureError {
 				if(encrypt){
@@ -128,7 +129,7 @@ public class ERequest<T> {
 					for (Map.Entry<String, String> entry : params.entrySet()) {
 						try {
 							tmpParams.put(entry.getKey(), URLEncoder.encode(entry.getValue(),"utf-8"));
-						} catch (UnsupportedEncodingException e) {
+						} catch (Exception e) {
 							e.printStackTrace();
 						}
 					}
@@ -170,7 +171,7 @@ public class ERequest<T> {
 					for (Map.Entry<String, String> entry : params.entrySet()) {
 						try {
 							tmpParams.put(entry.getKey(),URLEncoder.encode(ESecurity.Encrypt(entry.getValue()),"utf-8"));
-						} catch (UnsupportedEncodingException e) {
+						} catch (Exception e) {
 							e.printStackTrace();
 						}
 					}

@@ -33,10 +33,10 @@ public class DefaultRetryPolicy implements RetryPolicy {
     private final float mBackoffMultiplier;
 
     /** The default socket timeout in milliseconds */
-    public static final int DEFAULT_TIMEOUT_MS = 25000;
+    public static final int DEFAULT_TIMEOUT_MS = 50000;
 
     /** The default number of retries */
-    public static final int DEFAULT_MAX_RETRIES = 1;
+    public static final int DEFAULT_MAX_RETRIES = 0;
 
     /** The default backoff multiplier */
     public static final float DEFAULT_BACKOFF_MULT = 1f;

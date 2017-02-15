@@ -11,31 +11,26 @@ import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 
 import org.apache.http.protocol.HTTP;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.net.HttpCookie;
 import java.util.HashMap;
 import java.util.Properties;
-import java.util.Set;
 
 import ai.eve.http.EFileDownloader;
 import ai.eve.http.EImageLoader;
-import ai.eve.util.CookieHelper;
+import ai.eve.http.okHttp.OKHttpStack;
+import ai.eve.util.cookieHelper;
 import ai.eve.util.eCrashHandler;
 import ai.eve.volley.Network;
 import ai.eve.volley.RequestQueue;
 import ai.eve.volley.cache.BitmapImageCache;
 import ai.eve.volley.cache.DiskCache;
-import ai.eve.volley.stack.HurlStack;
 import ai.eve.volley.toolbox.BasicNetwork;
 
 /**
- * 
+ *
  * <p>
  * 使用此框架的工程需继承此类
  * </p>
@@ -48,7 +43,7 @@ import ai.eve.volley.toolbox.BasicNetwork;
  * <li>远程服务器的地址初始化</li>
  * <li>多异步任务的管理类初始化</li>
  * </ol>
- * 
+ *
  * <p>
  * 子类需覆盖的变量:
  * </p>
@@ -57,7 +52,7 @@ import ai.eve.volley.toolbox.BasicNetwork;
  * <li>localURL(本地数据存放地址(基于assert目录))</li>
  * <li>remoteURL(远程数据地址)</li>
  * </ul>
- * 
+ *
  * @author Eve-Wyong
  * @version 2015-2-23 下午11:03:06
  * @Copyright 2014 EVE. All rights reserved.
@@ -152,14 +147,14 @@ public class EApplication extends Application {
 	 * 私钥（用于解密服务端传回数据）
 	 */
 	public static String  rsaPrivateKey="";
-	
+
 	@Override
 	public void onCreate() {
 		super.onCreate();
 		initAPPProper();
 
 		mContext = this.getApplicationContext();
-		Network network = new BasicNetwork(new HurlStack(), HTTP.UTF_8);
+		Network network = new BasicNetwork(new OKHttpStack(), HTTP.UTF_8);
 
 		if (mCacheFile == null) {
 			mCacheFile = mContext.getCacheDir();
@@ -173,7 +168,6 @@ public class EApplication extends Application {
 		eCrashHandler crashHandler = eCrashHandler.getInstance();
 		// 注册crashHandler
 		crashHandler.init(getApplicationContext());
-		
 	}
 
 	private void initAPPProper() {
@@ -213,19 +207,19 @@ public class EApplication extends Application {
 	}
 
 	public static String getCookies() {
-		return CookieHelper.getCookies(mContext);
+		return cookieHelper.getCookies(mContext);
 	}
 
 	public static void setCookies(HashMap<String, HttpCookie> c) {
-		CookieHelper.setCookies(mContext, c);
+		cookieHelper.setCookies(mContext, c);
 	}
 
 	public static void clearCookies() {
-		CookieHelper.clearCookies(mContext);
+		cookieHelper.clearCookies(mContext);
 	}
 
 	public static String getReqCookies() {
-		return CookieHelper.getReqCookies(mContext);
+		return cookieHelper.getReqCookies(mContext);
 	}
 
 	public static EImageLoader getImageLoader() {
@@ -251,16 +245,16 @@ public class EApplication extends Application {
 				context).threadPriority(Thread.NORM_PRIORITY - 2)
 				// 线程的优先级数
 				.denyCacheImageMultipleSizesInMemory()
-				// 默认情况下是允许多个图片存在在缓存中，调用这个方法将否认这一做法。(个人理解，具体看源码)
+						// 默认情况下是允许多个图片存在在缓存中，调用这个方法将否认这一做法。(个人理解，具体看源码)
 				.discCache(new UnlimitedDiscCache(mCacheFile))
 				.discCacheFileNameGenerator(new Md5FileNameGenerator())// 用于磁盘缓存，生成文件名
 				.tasksProcessingOrder(QueueProcessingType.LIFO)// 线程队列的加载方式，LIFO
-																// last in first
-																// out 后进先出，FIOF
-																// first in
-																// first out
-																// 先进先出
-				// .writeDebugLogs()//启动详细记录ImageLoader的工作日志
+						// last in first
+						// out 后进先出，FIOF
+						// first in
+						// first out
+						// 先进先出
+						// .writeDebugLogs()//启动详细记录ImageLoader的工作日志
 				.build();// 构建
 		// 需要初始化ImageLoader这个配置
 		ImageLoader.getInstance().init(config);

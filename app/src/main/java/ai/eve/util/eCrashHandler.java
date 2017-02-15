@@ -27,7 +27,7 @@ public class eCrashHandler implements UncaughtExceptionHandler {
 	/** 系统默认的UncaughtException处理类 */
 	private UncaughtExceptionHandler mDefaultHandler;
 	/** CrashHandler实例 */
-	private static eCrashHandler INSTANCE;
+	private volatile static eCrashHandler INSTANCE;
 
 	/** 程序的Context对象 */
 	private Context mContext;
@@ -44,7 +44,11 @@ public class eCrashHandler implements UncaughtExceptionHandler {
 	/** 获取CrashHandler实例 ,单例模式 */
 	public static eCrashHandler getInstance() {
 		if (INSTANCE == null) {
-			INSTANCE = new eCrashHandler();
+			synchronized (eCrashHandler.class){
+				if(INSTANCE==null){
+					INSTANCE = new eCrashHandler();
+				}
+			}
 		}
 		return INSTANCE;
 	}

@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 // 这个version是区分library版本的，因此当我们需要更新library时记得修改这个version
-version = "1.0.0"
+version = "1.1.0"
 android {
     compileSdkVersion 22
     buildToolsVersion "22.0.1"
@@ -41,7 +41,10 @@ dependencies {
     compile 'com.android.support:appcompat-v7:22.1.1'
     compile 'org.apache.ant:ant:1.9.6'
     compile 'org.bouncycastle:bcprov-jdk15on:1.54'
-    compile 'com.google.code.gson:gson:2.5'
+    compile 'com.alibaba:fastjson:1.2.10'
+    compile 'com.squareup.okhttp3:okhttp:3.3.1'
+    compile 'com.squareup.okhttp3:okhttp-urlconnection:3.3.1'
+    compile 'com.facebook.fresco:fresco:0.9.0+'
 }
 def siteUrl = 'https://github.com/aieves/aieve'      // 项目的主页
 def gitUrl = 'https://github.com/aieves/aieve.git'   // Git仓库的url
@@ -85,7 +88,14 @@ task sourcesJar(type: Jar) {
 task javadoc(type: Javadoc) {
     source = android.sourceSets.main.java.srcDirs
     classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
-    options.encoding = 'UTF-8'
+}
+javadoc {
+    options{
+        encoding "UTF-8"
+        charSet 'UTF-8'
+        author true
+        version true
+    }
 }
 task javadocJar(type: Jar, dependsOn: javadoc) {
     classifier = 'javadoc '

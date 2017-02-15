@@ -124,7 +124,7 @@ public class NetworkDispatcher extends Thread {
                 request.markDelivered();
                 mDelivery.postResponse(request, response);
                 if(networkResponse!=null && networkResponse.data!=null){
-                	ELog.I("出参：", new String(networkResponse.data));
+                	ELog.Json("出参：", new String(networkResponse.data));
                 }else{
                 	ELog.I("出参：", new String("NULL"));
                 }

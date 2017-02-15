@@ -13,7 +13,7 @@ import java.util.Set;
 /**
  * Created by wyong on 2016/1/26.
  */
-public class CookieHelper {
+public class cookieHelper {
     private final static String cookieFileName = "cookie";
     public static String getCookies(Context mContext) {
         try {
@@ -35,7 +35,7 @@ public class CookieHelper {
         }
         return null;
     }
-    public static void setCookies(Context mContext,HashMap<String, HttpCookie> c) {
+    public static synchronized void setCookies(Context mContext,HashMap<String, HttpCookie> c) {
         StringBuilder sb = new StringBuilder();
         // 1 读取本地存的cookie
         String getCookie = getCookies(mContext);

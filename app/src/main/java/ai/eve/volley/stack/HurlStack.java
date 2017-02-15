@@ -175,7 +175,7 @@ public class HurlStack implements HttpStack {
     /**
      * Create an {@link HttpURLConnection} for the specified {@code url}.
      */
-    private HttpURLConnection createConnection(URL url) throws IOException {
+    protected HttpURLConnection createConnection(URL url) throws IOException {
         return (HttpURLConnection) url.openConnection();
     }
 

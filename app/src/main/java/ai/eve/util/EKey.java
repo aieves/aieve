@@ -7,7 +7,7 @@ public class EKey {
     
 	public String rsaPrivateKey="";
 	
-	private static EKey rsakey;
+	private volatile static EKey rsakey;
 	
 	private EKey(){
 		rsaPublicKey = EApplication.rsaPublicKey;
@@ -16,7 +16,11 @@ public class EKey {
 	
 	public static EKey getInstance(){
 		if(rsakey==null){
-			rsakey = new EKey();
+			synchronized(EKey.class){
+				if(rsakey==null){
+					rsakey = new EKey();
+				}
+			}
 		}
 		return rsakey;
 	}

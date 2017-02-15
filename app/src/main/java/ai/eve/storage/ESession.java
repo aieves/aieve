@@ -6,6 +6,8 @@ import java.util.HashMap;
  * Created by wyong on 2016/1/14.
  */
 public class ESession {
+
+
     private HashMap<String,Object> data;
     private static ESession session;
 
