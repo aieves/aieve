@@ -2,7 +2,7 @@
 ##What
 Android framework for development. Please click:http://www.aieve.cn
 ```
-compile 'ai.eve:app:1.0.0'
+compile 'ai.eve:app:1.1.0'
 ```
 
 ##Can
@@ -39,20 +39,17 @@ compile 'ai.eve:app:1.0.0'
 ##Issues
 If u have some questions, Please contacts us with: 
 
-* email(484349734@qq.com)
-* QQ: 484349734
-* Website：http://www.aieve.cn
+* email(wyong2017@gmail.com)
+* Website：http://www.aieve.cn/aieve
 
 ##Thanks
 Thanks to the following authors:
 
-* [cui]
-* [shuai]
 * [w.yong]
 
 ##Licence
 
-Copyright 2015-2016 aieve
+Copyright 2017-2018 aieve
 
 Licensed under the Apache License, Version 2.0 (the "License");<br>
 you may not use this file except in compliance with the License.<br>

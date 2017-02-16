@@ -36,7 +36,7 @@ android {
 
 }
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:support-v4:22.1.1'
     compile 'com.android.support:appcompat-v7:22.1.1'
     compile 'org.apache.ant:ant:1.9.6'
@@ -97,6 +97,14 @@ javadoc {
         version true
     }
 }
+if (JavaVersion.current().isJava8Compatible()) {
+    allprojects {
+        tasks.withType(Javadoc) {
+            options.addStringOption('Xdoclint:none', '-quiet')
+        }
+    }
+}
+
 task javadocJar(type: Jar, dependsOn: javadoc) {
     classifier = 'javadoc '
     from javadoc.destinationDir
