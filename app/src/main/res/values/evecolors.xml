@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="eve_white">#FAFAFA</color>
+  <color name="eve_gray_dark_text">#262626</color>
+  <color name="eve_textcolor">#ffffff</color>
+  <color name="eve_blue">#2D90F8</color>
+  <color name="eve_gray">#b1b1b2</color>
+  <color name="eve_titlebar">#2D90F8</color>
+  <color name="eve_bottombar">#2D90F8</color>
+  <color name="eve_titlebar_text">#FAFAFA</color>
+</resources>

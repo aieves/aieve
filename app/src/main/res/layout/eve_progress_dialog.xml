@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="3dip"
         android:layout_marginTop="0dp"
-        android:progressDrawable="@drawable/progress_diy"
+        android:progressDrawable="@drawable/eve_progress_diy"
         />
    <!--  <ImageView 
         android:id="@+id/image"

@@ -99,7 +99,7 @@ public class MultiChoiceDialog extends BaseDialog implements
 	private ChoiceAdapter adapter;
 
 	public MultiChoiceDialog(Context context, String mParam) {
-		super(context, R.style.Theme_Dialog);
+		super(context, R.style.eve_Theme_Dialog);
 		this.mContext = context;
 		dialogParam = (MultiChoiceDialogParam) JSON.parseObject(mParam,
                               MultiChoiceDialogParam.class);
@@ -109,7 +109,7 @@ public class MultiChoiceDialog extends BaseDialog implements
 	private void init() {
 		options = dialogParam.options;
 		mInflater = LayoutInflater.from(mContext);
-		View layout = mInflater.inflate(R.layout.custom_alert_dialog_ll, null);
+		View layout = mInflater.inflate(R.layout.eve_custom_alert_dialog_ll, null);
 		mLeftBtn = (Button) layout
 				.findViewById(R.id.custom_alert_dialog_left_btn);
 		mLeftBtn.setOnClickListener(this);
@@ -125,7 +125,7 @@ public class MultiChoiceDialog extends BaseDialog implements
 		if (dialogParam.title != null && dialogParam.title.length() > 0) {
 			mTitleTV.setText(dialogParam.title);
 		} else {
-			mTitleTV.setText(mContext.getResources().getString(R.string.title));
+			mTitleTV.setText(mContext.getResources().getString(R.string.eve_title));
 		}
 		if (dialogParam.ok == null) {
 			mLeftBtn.setVisibility(View.GONE);
@@ -133,7 +133,7 @@ public class MultiChoiceDialog extends BaseDialog implements
 			if (dialogParam.ok.text != null && dialogParam.ok.text.length() > 0) {
 				mLeftBtn.setText(dialogParam.ok.text);
 			} else {
-				mLeftBtn.setText(mContext.getString(R.string.confrim));
+				mLeftBtn.setText(mContext.getString(R.string.eve_confrim));
 			}
 		}
 		if (dialogParam.cancel == null) {
@@ -143,15 +143,15 @@ public class MultiChoiceDialog extends BaseDialog implements
 					&& dialogParam.cancel.text.length() > 0) {
 				mRightBtn.setText(dialogParam.cancel.text);
 			} else {
-				mRightBtn.setText(mContext.getString(R.string.cancel));
+				mRightBtn.setText(mContext.getString(R.string.eve_cancel));
 			}
 		}
 
 		LinearLayout l = (LinearLayout) LayoutInflater.from(mContext).inflate(
-				R.layout.multi_choice, null);
+				R.layout.eve_multi_choice, null);
 		final ListView list = (ListView) l.findViewById(R.id.listview);
 		adapter = new ChoiceAdapter(mContext, options,
-				R.layout.multichoice_list_item);
+				R.layout.eve_multichoice_list_item);
 		list.setAdapter(adapter);
 		content.addView(l);
 		

@@ -27,12 +27,12 @@ public class BaseDialog extends Dialog {
 
 	public BaseDialog(Context context) {
 		super(context);
-        getWindow().setBackgroundDrawableResource(R.drawable.bg_dialog);
+        getWindow().setBackgroundDrawableResource(R.drawable.eve_bg_dialog);
 	}
 
 	public BaseDialog(Context context, int theme) {
 		super(context, theme);
-        getWindow().setBackgroundDrawableResource(R.drawable.bg_dialog);
+        getWindow().setBackgroundDrawableResource(R.drawable.eve_bg_dialog);
 	}
 
 	public OnJsCallBack getmOnJsCallBack() {

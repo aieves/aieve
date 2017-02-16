@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="eve_title">提示</string>
+    <string name="eve_confrim">确定</string>
+    <string name="eve_cancel">取消</string>
+    <string name="eve_select">请选择</string>
+</resources>

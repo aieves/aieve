@@ -35,7 +35,7 @@ public class CustomDialog extends BaseDialog implements View.OnClickListener{
 	private DialogParam dialogParam;
 
 	public CustomDialog(Context context, String mParam) {
-		super(context, R.style.Theme_Dialog);
+		super(context, R.style.eve_Theme_Dialog);
 		this.mContext = context;
         dialogParam = (DialogParam) JSON.parseObject(mParam, DialogParam.class);
 		init();
@@ -43,7 +43,7 @@ public class CustomDialog extends BaseDialog implements View.OnClickListener{
 	
 	private void init() {
 		mInflater = LayoutInflater.from(mContext);
-		View layout = mInflater.inflate(R.layout.custom_alert_dialog_ll, null);
+		View layout = mInflater.inflate(R.layout.eve_custom_alert_dialog_ll, null);
 		mLeftBtn = (Button) layout.findViewById(R.id.custom_alert_dialog_left_btn);
 		mLeftBtn.setOnClickListener(this);
 		mRightBtn = (Button) layout.findViewById(R.id.custom_alert_dialog_right_btn);
@@ -57,13 +57,13 @@ public class CustomDialog extends BaseDialog implements View.OnClickListener{
 		if (dialogParam.title != null && dialogParam.title.length() > 0) {
 			mTitleTV.setText(dialogParam.title);
 		} else {
-			mTitleTV.setText(mContext.getResources().getString(R.string.title));
+			mTitleTV.setText(mContext.getResources().getString(R.string.eve_title));
 		}
 		if (dialogParam.content != null && dialogParam.content.length() > 0) {
 			mMessageTV.setText(dialogParam.content);
 		} else {
 			mMessageTV.setText(mContext.getResources()
-					.getString(R.string.title));
+					.getString(R.string.eve_title));
 		}
 		if (dialogParam.ok == null) {
 			mLeftBtn.setVisibility(View.GONE);
@@ -71,7 +71,7 @@ public class CustomDialog extends BaseDialog implements View.OnClickListener{
 			if (dialogParam.ok.text != null && dialogParam.ok.text.length() > 0) {
 				mLeftBtn.setText(dialogParam.ok.text);
 			} else {
-				mLeftBtn.setText(mContext.getString(R.string.confrim));
+				mLeftBtn.setText(mContext.getString(R.string.eve_confrim));
 			}
 		}
 		if (dialogParam.cancel == null) {
@@ -81,7 +81,7 @@ public class CustomDialog extends BaseDialog implements View.OnClickListener{
 					&& dialogParam.cancel.text.length() > 0) {
 				mRightBtn.setText(dialogParam.cancel.text);
 			} else {
-				mRightBtn.setText(mContext.getString(R.string.cancel));
+				mRightBtn.setText(mContext.getString(R.string.eve_cancel));
 			}
 		}
         

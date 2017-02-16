@@ -1,24 +1,7 @@
 <resources>
-
-    <!--
-        Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
-    -->
-    <style name="AppBaseTheme" parent="android:Theme.Light">
-        <!--
-            Theme customizations available in newer API levels can go in
-            res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
-        -->
-    </style>
-
-    <!-- Application theme. -->
-    <style name="AppTheme" parent="AppBaseTheme">
-        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
-    </style>
-    
-      <!-- 没有背景自定义dialog风格 -->
-    <style name="Theme_Dialog" parent="@android:style/Theme.Dialog">
+    <style name="eve_AppBaseTheme" parent="android:Theme.Light"></style>
+    <style name="eve_AppTheme" parent="eve_AppBaseTheme"></style>
+    <style name="eve_Theme_Dialog" parent="@android:style/Theme.Dialog">
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowFrame">@null</item>
         <item name="android:windowNoTitle">true</item>
@@ -27,40 +10,25 @@
         <item name="android:windowContentOverlay">@null</item>
         <item name="android:background">@null</item>
         <item name="android:backgroundDimEnabled">true</item>
-        <item name="android:windowTitleStyle">@style/title_style</item>
+        <item name="android:windowTitleStyle">@style/eve_title_style</item>
     </style>
-    
-    <style name="title_style">
-        <item name="android:background">@color/gray</item>
+    <style name="eve_title_style">
+        <item name="android:background">@color/eve_gray</item>
     </style>
-    
-     <style name="loadingDialog" parent="@android:style/Theme.Dialog">
+    <style name="eve_loadingDialog" parent="@android:style/Theme.Dialog">
         <item name="android:windowFrame">@null</item>
-        <!-- 边框 -->
         <item name="android:windowIsFloating">true</item>
-        <!-- 是否浮现在activity之上 -->
-        <item name="android:windowBackground">@color/white</item>
+        <item name="android:windowBackground">@color/eve_white</item>
         <item name="android:windowIsTranslucent">true</item>
-        <!-- 半透明 -->
         <item name="android:windowNoTitle">true</item>
-        <!-- 无标题 -->
         <item name="android:backgroundDimEnabled">false</item>
-        <!-- 模糊 -->
     </style>
-    
-     <style name="dialog" parent="@android:style/Theme.Dialog">
+    <style name="eve_dialog" parent="@android:style/Theme.Dialog">
         <item name="android:windowFrame">@null</item>
-        <!-- 边框 -->
         <item name="android:windowIsFloating">true</item>
-        <!-- 是否浮现在activity之上 -->
-        <item name="android:windowBackground">@color/white</item>
+        <item name="android:windowBackground">@color/eve_white</item>
         <item name="android:windowIsTranslucent">true</item>
-        <!-- 半透明 -->
         <item name="android:windowNoTitle">true</item>
-        <!-- 无标题 -->
         <item name="android:backgroundDimEnabled">true</item>
-        <!-- 模糊 -->
     </style>
-     
-
 </resources>

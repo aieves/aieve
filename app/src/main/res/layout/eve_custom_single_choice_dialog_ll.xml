@@ -6,16 +6,16 @@
     android:orientation="vertical" >
 
     <LinearLayout
-        android:layout_width="@dimen/width"
-        android:layout_height="@dimen/dialog_height"
-        android:background="@drawable/dialog_backgroup"
+        android:layout_width="@dimen/eve_width"
+        android:layout_height="@dimen/eve_dialog_height"
+        android:background="@drawable/eve_dialog_backgroup"
         android:orientation="vertical"
         android:padding="1dp" >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="48dip"
-            android:background="@drawable/dialog_title_round"
+            android:background="@drawable/eve_dialog_title_round"
             android:orientation="horizontal" >
 
             <ImageView
@@ -31,7 +31,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="7"
                 android:gravity="center_vertical"
-                android:textColor="@color/white"
+                android:textColor="@color/eve_white"
                 android:textSize="23sp"
                 android:textStyle="bold" />
         </LinearLayout>

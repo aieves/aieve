@@ -8,14 +8,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/dialog_backgroup"
+        android:background="@drawable/eve_dialog_backgroup"
         android:orientation="vertical"
         android:padding="1dp" >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:background="@drawable/title_dialog"
+            android:background="@drawable/eve_title_dialog"
             android:orientation="horizontal" >
 
             <ImageView
@@ -31,7 +31,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="7"
                 android:gravity="center_vertical"
-                android:textColor="@color/white"
+                android:textColor="@color/eve_white"
                 android:textSize="18sp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -57,7 +57,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/btn_gray"
+                android:background="@drawable/eve_btn_gray"
                 android:text="确定"
                 android:textColor="#464646"
                 android:textSize="16sp" />
@@ -68,7 +68,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/btn_gray"
+                android:background="@drawable/eve_btn_gray"
                 android:text="取消"
                 android:textColor="#464646"
                 android:textSize="16sp" />

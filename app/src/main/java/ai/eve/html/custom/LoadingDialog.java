@@ -21,7 +21,7 @@ public class LoadingDialog extends Dialog {
 	public ProgressBar bar;
 
 	public LoadingDialog(Context context) {
-		super(context, R.style.dialog);
+		super(context, R.style.eve_dialog);
 	}
 
 	public LoadingDialog(Context context, int theme) {
@@ -29,8 +29,8 @@ public class LoadingDialog extends Dialog {
 	}
 
 	public static LoadingDialog createDialog(Context context) {
-		customProgressDialog = new LoadingDialog(context, R.style.loadingDialog);
-		customProgressDialog.setContentView(R.layout.progress_dialog);
+		customProgressDialog = new LoadingDialog(context, R.style.eve_loadingDialog);
+		customProgressDialog.setContentView(R.layout.eve_progress_dialog);
 		customProgressDialog.getWindow().getAttributes().gravity = Gravity.TOP;
 		customProgressDialog.setCanceledOnTouchOutside(false);// 设置点击屏幕Dialog不消失
 		customProgressDialog.setCancelable(true);
