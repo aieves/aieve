@@ -106,7 +106,6 @@ public class EToolBarActivity extends ActionBarActivity {
         try{
             unregisterReceiver(mNetReceiver);
         }catch (Exception e){
-            e.printStackTrace();
         }
     }
 
